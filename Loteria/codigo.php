@@ -15,34 +15,34 @@
           4- Lotomania\n");
 
 
-    $jogo = fgets(STDIN);
+    $jogo = (int) fgets(STDIN);
 
+    //verificar o numeros de dezenas de acordo com as regras de cada jogo
     print("Informe o número de dezenas: \n");
-
-    $dezenas = fgets(STDIN);
+    $dezenas = (int) fgets(STDIN);
 
     print("Informe quantas apostas deseja gerar: \n");
+    $apostas = (int) fgets(STDIN);
 
-    $apostas = fgets(STDIN);
-
-
-    if ($jogo == 1 and $dezenas > 6 and $dezenas < 15) {
+    if ($jogo == 1 and $dezenas >= 6 and $dezenas <= 15) {
     	
     	megasena($apostas, $dezenas);
 
-          }elseif ($jogo == 2 and $dezenas >= 5 and $dezenas <= 15) {
+    }elseif ($jogo == 2 and $dezenas >= 5 and $dezenas <= 15) {
  
-             lotofacil($apostas, $dezenas);    	
+      lotofacil($apostas, $dezenas);    	
  
-              }elseif ($jogo == 3 and $dezenas >= 15 and $dezenas <= 18) {
+    }elseif ($jogo == 3 and $dezenas >= 15 and $dezenas <= 18) {
     	 
-    	          quina($apostas, $dezenas);
+     quina($apostas, $dezenas);
 
-                    }elseif ($jogo == 4 and $dezenas >= 20 and $dezenas <= 50 ) {
+    }elseif ($jogo == 4 and $dezenas == 50 ) {
     	
-    	                 lotomania($apostas, $dezenas);
+    	lotomania($apostas, $dezenas);
 
-                           }else{
+   }else{
 
-    	                      print("O número de jogo informado não existe \n");
-                                 }
+    	print("O número de jogo informado não existe \n");
+   }
+
+

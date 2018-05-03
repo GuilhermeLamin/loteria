@@ -1,79 +1,123 @@
 <?php
 
 
-     function megasena($apostas, $dezenas){
+function megasena($apostas, $dezenas){
 
+     for ($i=1; $i <= $apostas ; $i++) { 
 
+       $sorteados = [];
 
-     	    for ($i=0; $i < $apostas; $i++) { 
-     	    	
-     	    	for ($i=0; $i < $dezenas ; $i++) { 
-     	    		
-     	    		$sorteadas = rand(1, 25);
-     	    	}
+       for ($j=0; $j < $dezenas ; $j++) { 
 
-     	    }
+             //validacao
+            do {
+               $x = rand(1, 60);
+          } while (in_array($x, $sorteados));
 
-     	    $valor = $apostas*$dezenas*2.50;
-
-
-     	    print("As dezenas sorteadas foram: ".$sorteadas." e o valor total do jogo é:".$valor."/n");
-
+          $sorteados[] = $x;
      }
 
+     sort($sorteados);
 
-     function lotofacil($apostas, $dezenas){
-
-
-
-     	    for ($i=0; $i < $apostas; $i++) { 
-     	    	
-     	    	for ($i=0; $i < $dezenas ; $i++) { 
-     	    		
-     	    		$sorteadas[] = rand(1,25);
-     	    	}
-
-     	    }
-
-     	    $valor = $apostas*$dezenas*1.50;
+     $resultado = implode(",", $sorteados);
 
 
-     	    print("As dezenas sorteadas foram: ".$sorteadas." e o valor total do jogo é:");
+     echo "Sorteio número $i: \n";
+     print("As dezenas sorteadas foram:".$resultado." e o valor total foi de: \n");
+
+  }
+
+
+}
+
+
+function lotofacil($apostas, $dezenas){
+
+
+    for ($i=1; $i <= $apostas ; $i++) { 
+
+       $sorteados = [];
+
+       for ($j=0; $j < $dezenas ; $j++) { 
+
+             //validacao
+            do {
+               $x = rand(1, 25);
+          } while (in_array($x, $sorteados));
+
+          $sorteados[] = $x;
      }
 
+     sort($sorteados);
 
-     function quina($apostas, $dezenas){
+     $resultado = implode(",", $sorteados);
 
 
+     echo "Sorteio número $i: \n";
+     print("As dezenas sorteadas foram:".$resultado." e o valor total foi de: \n");
 
-     	    for ($i=0; $i < $apostas; $i++) { 
-     	    	
-     	    	for ($i=0; $i < $dezenas ; $i++) { 
-     	    		
-     	    		$sorteadas[] = rand(1,80);
-     	    	}
+  }
 
-     	    }
 
-     	    $valor = $apostas*$dezenas*2.50;
+}
 
-     	    print("As dezenas sorteadas foram: ".$sorteadas." e o valor total do jogo é:");
+function quina($apostas, $dezenas){
+
+     for ($i=1; $i <= $apostas ; $i++) { 
+
+       $sorteados = [];
+
+       for ($j=0; $j < $dezenas ; $j++) { 
+
+             //validacao
+            do {
+               $x = rand(1, 80);
+          } while (in_array($x, $sorteados));
+
+          $sorteados[] = $x;
      }
 
-     function lotomania($apostas, $dezenas){
+     sort($sorteados);
+
+     $resultado = implode(",", $sorteados);
+
+
+     echo "Sorteio número $i: \n";
+     print("As dezenas sorteadas foram:".$resultado." e o valor total foi de: \n");
+
+  }
+
+
+}
+
+
+function lotomania($apostas, $dezenas){
 
 
 
-     	    for ($i=0; $i < $apostas; $i++) { 
-     	    	
-     	    	for ($i=0; $i < $dezenas ; $i++) { 
-     	    		
-     	    		$sorteadas[] = rand(1,100);
-     	    	}
+     for ($i=1; $i <= $apostas ; $i++) { 
 
-     	    }
+       $sorteados = [];
 
-     	    $valor = $apostas*$dezenas*1.50;
+       for ($j=0; $j < $dezenas ; $j++) { 
 
-     	    print("As dezenas sorteadas foram: ".$sorteadas." e o valor total do jogo é:");
+             //validacao
+            do {
+               $x = rand(1, 100);
+          } while (in_array($x, $sorteados));
+
+          $sorteados[] = $x;
      }
+
+     sort($sorteados);
+
+     $resultado = implode(",", $sorteados);
+
+
+     echo "Sorteio número $i: \n";
+     print("As dezenas sorteadas foram:".$resultado." e o valor total foi de: \n");
+
+  }
+
+
+}
